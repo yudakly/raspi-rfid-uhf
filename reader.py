@@ -20,4 +20,4 @@ while 1:
     else:
         print("No tag detected...")
 
-    time sleep(1)
+    time.sleep(1)
