@@ -2,7 +2,7 @@ import serial, binascii
 import time
 
 ser = serial.Serial(
-    port = '/dev/serial10',
+    port = '/dev/serial0',
     baudrate = 9600,
     parity = serial.PARITY_NONE,
     stopbits = serial.STOPBITS_ONE,
@@ -14,7 +14,12 @@ ser.close()
 ser.open()
 
 while 1:
+    print(ser)
+    
     data = str(binascii.hexlify(ser.read(17)))
+    
+    print(data)
+    
     if data != "":
         print("tag: {}".format(data[6:22]))
     else:
